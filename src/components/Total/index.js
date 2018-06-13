@@ -5,7 +5,7 @@ class Total extends Component {
     render() {
         return (
             <div className="total">
-                <h3>6,000NOK</h3>
+                <h3>6,000 <span>NOK</span></h3>
             </div>
         )
     }

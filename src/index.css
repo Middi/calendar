@@ -49,7 +49,7 @@ input, select, textarea {
 a:focus, button:focus {outline: none;}
 
 body {
-  background-color: RGBA(237, 237, 237, 1.00);
+  background-color: RGBA(224, 240, 247, 1.00);
   display: flex;
   align-items: center;
   justify-content: center;
