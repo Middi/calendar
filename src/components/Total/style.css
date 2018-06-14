@@ -3,6 +3,7 @@
     bottom: -48px;
     right: 0;
     background-color: RGBA(3, 178, 240, 1.00);
+    box-shadow: 0 14px 36px -6px #777777;
     padding: 12px 34px;
 }
 

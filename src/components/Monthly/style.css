@@ -31,16 +31,13 @@ h2 {
     display: grid;
     grid-template-columns: repeat(7, 1fr);
     grid-gap: 6px;
-}
-
-.calendar-header {
     color: white;
     font-size: 1.25rem;
     font-family: 'Lato', sans-serif;
 }
 
 .day {
-    padding: 16px 0px;
+    padding: 14px 0px;
     font-weight: 600;
 }
 
