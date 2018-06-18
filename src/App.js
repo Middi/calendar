@@ -27,6 +27,10 @@ class App extends Component {
     });
   }
 
+  monthMinus = () => {
+    console.log('down');
+  }
+
   componentDidMount() {
     this.getDate();
   }
@@ -36,7 +40,7 @@ class App extends Component {
     return (
       <div className="App">
         <div className="left">
-          <Monthly {...this.state} />
+          <Monthly monthMinus={this.monthMinus} {...this.state} />
           <Total />
         </div>
         <List />

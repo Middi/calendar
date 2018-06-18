@@ -14,7 +14,7 @@ class Monthly extends Component {
         return (
             <div className="month">
                 <div className="title-month">
-                    <h2>&lt;</h2>
+                    <h2 onClick={this.props.monthMinus}>&lt;</h2>
                     <h1>{this.props.monthName}</h1>
                     <h2>&gt;</h2>
                 </div>
