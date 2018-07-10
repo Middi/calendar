@@ -9,7 +9,10 @@ class App extends Component {
 
   state = {
     year: '',
-    modalOpen: false
+    modalOpen: true,
+    event: {
+      name: ''
+    }
   }
 
   getDate = () => {
@@ -50,7 +53,12 @@ class App extends Component {
         </div>
           {
             this.state.modalOpen ?
-              <Modal /> :
+              <Modal
+                onTextChange={text => this.setState({
+                  event: {
+                    name: text
+                  }
+                })} /> :
               null
           }
       </div>
