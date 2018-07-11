@@ -22,4 +22,4 @@ yarn-error.log*
 
 keys.js
 
-*.json.gz
+.json.gz
