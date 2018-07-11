@@ -9,9 +9,14 @@ class App extends Component {
 
   state = {
     year: '',
-    modalOpen: true,
+    modalOpen: false,
     event: {
-      name: ''
+      name: '',
+      dateStart: '',
+      dateEnd: '',
+      timeStart: '',
+      timeEnd: '',
+      shiftType: ''
     }
   }
 
@@ -40,6 +45,20 @@ class App extends Component {
     this.getDate();
   }
 
+  change = e => {
+    
+    const newState = {...this.state};
+
+    newState.event[e.target.name] = e.target.value;
+
+    this.setState(newState);
+  }
+
+  clickSubmit = e => {
+    e.preventDefault();
+    console.log(this.state);
+  }
+
 
   render() {
     return (
@@ -53,12 +72,7 @@ class App extends Component {
         </div>
           {
             this.state.modalOpen ?
-              <Modal
-                onTextChange={text => this.setState({
-                  event: {
-                    name: text
-                  }
-                })} /> :
+              <Modal clickSubmit={this.clickSubmit} change={this.change} /> :
               null
           }
       </div>
