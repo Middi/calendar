@@ -7,15 +7,17 @@ const Item = require('../../models/item');
 
 router.get('/', (req, res) => {
     Item.find()
-        .sort({date: -1})
         .then(items => res.json(items))
 });
 
 router.post('/', (req, res) => {
     const newItem = new Item({
-        event: req.body.event,
-        start: req.body.start,
-        end: req.body.end
+        name: req.body.name,
+        dateStart: req.body.dateStart,
+        dateEnd: req.body.dateEnd,
+        timeStart: req.body.timeStart,
+        timeEnd: req.body.timeEnd,
+        shiftType: req.body.shiftType,
     });
 
     newItem.save().then(item => res.json(item));

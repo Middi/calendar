@@ -4,19 +4,27 @@ const Schema = mongoose.Schema;
 
 // Create Schema
 const ItemSchema = new Schema({
-    event: {
+    name: {
         type: String,
         required: true
     },
-    date: {
-        type: Date,
-        default: Date.now
-    },
-    start: {
+    dateStart: {
         type: String,
         required: true
     },
-    end: {
+    dateEnd: {
+        type: String,
+        required: true
+    },
+    timeStart: {
+        type: String,
+        required: true
+    },
+    timeEnd: {
+        type: String,
+        required: true
+    },
+    shiftType: {
         type: String,
         required: true
     }

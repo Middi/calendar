@@ -7,7 +7,7 @@ class Modal extends Component {
         return (
             <div className="modal-bg">
                 <div className="modal">
-                    <span className="close">+</span>
+                    <span onClick={() => this.props.closeModal()} className="close">+</span>
                     <h1 className="event-title">Add Event</h1>
                     <form>
                         <label>Event</label>
@@ -21,9 +21,9 @@ class Modal extends Component {
                         <label>End Time</label>
                         <input type="time" name="timeEnd" onKeyUp={e => this.props.change(e)} />
                         <label>Shift Type</label>
-                        <select>
-                            <option value="1000" name="shiftType" onKeyUp={e => this.props.change(e)}>Full Day</option>
-                            <option value="500" name="shiftType" onKeyUp={e => this.props.change(e)}>Half Day</option>
+                        <select name="shiftType" onChange={e => this.props.change(e)}>
+                            <option value="Full Day" name="shiftType">Full Day</option>
+                            <option value="Half Day" name="shiftType">Half Day</option>
                         </select>
                         <button onClick={(e) => this.props.clickSubmit(e)}>Submit</button>
                     </form>

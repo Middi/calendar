@@ -8,7 +8,7 @@ class Monthly extends Component {
         let arr = [];
         for(var i=1; i<this.props.daysInMonth+1; i++){
             arr.push(
-                <Day date={i} key={i} today={this.props.today} />
+                <Day addEvent={this.props.addEvent} date={i} key={i} today={this.props.today} />
             );  
         }
         return (

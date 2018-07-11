@@ -16,7 +16,7 @@ class App extends Component {
       dateEnd: '',
       timeStart: '',
       timeEnd: '',
-      shiftType: ''
+      shiftType: 'Full Day'
     }
   }
 
@@ -46,12 +46,12 @@ class App extends Component {
   }
 
   change = e => {
-    
-    const newState = {...this.state};
-
-    newState.event[e.target.name] = e.target.value;
-
-    this.setState(newState);
+    // Spread state into new variable
+    const NS = {...this.state};
+    // Change what needs to be changed
+    NS.event[e.target.name] = e.target.value;
+    // Set state with new version of state
+    this.setState(NS);
   }
 
   clickSubmit = e => {
@@ -59,20 +59,25 @@ class App extends Component {
     console.log(this.state);
   }
 
+  ModalEvent = () => {
+    const newState = {...this.state};
+    newState.modalOpen = !this.state.modalOpen;
+    this.setState(newState)
+  }
 
   render() {
     return (
       <div className="wrapper">
         <div className="App">
           <div className="left">
-            <Monthly monthMinus={this.monthMinus} {...this.state} />
+            <Monthly addEvent={this.ModalEvent} monthMinus={this.monthMinus} {...this.state} />
             <Total />
           </div>
           <List />
         </div>
           {
             this.state.modalOpen ?
-              <Modal clickSubmit={this.clickSubmit} change={this.change} /> :
+              <Modal closeModal={this.ModalEvent} clickSubmit={this.clickSubmit} change={this.change} /> :
               null
           }
       </div>
